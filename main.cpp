@@ -40,7 +40,7 @@ int main(int argc, char *argv[])
 		{
 			printf("Программа для создания тестов для Moodle на основе \nфайлов сгенерированных Mentor2.");
 			printf("help\nДля того чтобы изменить директорию поиска исходных файлов\n необходимо запустить программу с параметром -d \n и далее указать путь до рабочей директории.");
-			return a.exec();
+			return 0;
 		}
 	}
 
@@ -63,7 +63,7 @@ int main(int argc, char *argv[])
 	else 
 	{
 		printf("Файл Number.txt не был найден. Исправьте это и перезапустите программу.");
-		return a.exec();
+		return 0;
 	}
 	infNum.close();
 	QStringList inf=inNum.split('\n');
@@ -82,7 +82,7 @@ int main(int argc, char *argv[])
 	else
 	{
 		printf("Файл right.txt не был найден. Исправьте это и перезапустите программу.");
-		return a.exec();
+		return 0;
 	}
     infAnsw.close();
 	QStringList Answers=inAnsw.split('\n');
@@ -153,7 +153,7 @@ int main(int argc, char *argv[])
     }
  
     
-    return a.exec();
+    return 0;
 }
 QString imToBase64(QString name)
 {
