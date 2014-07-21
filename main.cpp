@@ -39,8 +39,20 @@ int main(int argc, char *argv[])
 		if(arguments.at(1)=="-h")
 		{
 			printf("Программа для создания тестов для Moodle на основе \nфайлов сгенерированных Mentor2.");
-			printf("help\nДля того чтобы изменить директорию поиска исходных файлов\n необходимо запустить программу с параметром -d \n и далее указать путь до рабочей директории.");
+			printf("\nДля того чтобы изменить директорию поиска исходных файлов\n необходимо запустить программу с параметром -d \n и далее указать путь до рабочей директории.");
+			printf("\nДля изменения кол-ва ответов в тесте -а, по умолчанию 5.");
 			return 0;
+		}
+		if(arguments.at(1)=="-a")
+		{
+			AnswerCount=arguments.at(2).toInt();
+		}
+		if(arguments.count()>3)
+		{
+			if(arguments.at(3)=="-a")
+			{
+				AnswerCount=arguments.at(4).toInt();
+			}
 		}
 	}
 
@@ -149,7 +161,8 @@ int main(int argc, char *argv[])
 		}
 		out << "</quiz>";
 		outfXML.close();
-		printf("\n\n\nГотово.");
+		printf("\nГотово\nФайл toMoodle.xml был создан. \nНазвание теста:%s.\nБыло сгенерировано %d задач.\nКатегорий: %d\nВопросов в категории: %d.",Category.toUtf8(),taskMax*variantMax,taskMax,variantMax );
+
     }
  
     
